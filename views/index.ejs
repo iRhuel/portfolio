@@ -1,10 +1,30 @@
 <html>
 <head>
     <title>Phil's Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div>
-    I am <%= person.firstName %> <%= person.lastName %>
+<div class="header">
+    <h2>Hi, I'm <span class="highlight"><%= person.firstName %> <%= person.lastName %></span></h2>
+    <h5>Here are some things I've worked on</h5>
+</div>
+<div class="project-container">
+    <a class="btn" href="https://pt-vstda.herokuapp.com/">VSTDA</a>
+    <a class="btn" href="https://pt-change-calculator.herokuapp.com/">Change Calculator</a>
+    <a class="btn" href="https://pt-mortgage-calculator.herokuapp.com/">Mortgage Payment Calculator</a>
+    <a class="btn" href="https://pt-sd-topspots.herokuapp.com/">SD Top Spots</a>
+    <a class="btn" href="https://pt-hackathon.herokuapp.com/">Hackathon</a>
+</div>
+<hr>
+<div class="footer">
+    <form action="https://github.com/iRhuel">
+        <button class="btn">GitHub</button>
+    </form>
+    <form action="/contact" method="GET">
+        <button class="btn" type="submit">Contact Me</button>
+    </form>
 </div>
 </body>
 </html>

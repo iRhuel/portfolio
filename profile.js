@@ -7,7 +7,7 @@ router.use(function timeLog (req, res, next) {
 });
 
 router.get('/about', function (req, res) {
-    res.send('About me');
+    res.send('I\'m not very creative, like... at all.');
 });
 
 module.exports = router;

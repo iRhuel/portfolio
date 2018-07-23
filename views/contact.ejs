@@ -1,20 +1,29 @@
 <html>
 <head>
     <title>Contact Tom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div>
-    <form action="/thanks" method="POST">
-        <label for="firstName">First Name:</label>
-        <input id="firstName" name="firstName" type="text">
-
-        <label for="lastName">Last Name:</label>
-        <input id="lastName" name="lastName" type="text">
-
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="text">
-
-        <input type="submit" />
+<div class="header contact-form">
+    <form id="email-form" action="/thanks" method="POST">
+        <h2>Send Me Your Contact Info</h2>
+        <h5>I'll get back to you as soon as I can!</h5>
+        <br>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" id="firstName" name="firstName" type="text">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" id="lastName" name="lastName" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-control" id="email" name="email" type="email">
+        </div>
+        <input class="btn" type="submit"/>
     </form>
 </div>
 </body>
