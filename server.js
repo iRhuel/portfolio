@@ -2,8 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const profile = require('./profile');
+require('dotenv').config();
 const Mailchimp = require('mailchimp-api-v3');
-const mailchimp = new Mailchimp('eec37f80f7e2588cdb97165c26633365-us18');
+const mailchimp = new Mailchimp(process.env.MAILCHIMP_API_KEY);
 const md5 = require('md5');
 
 const app = express();
