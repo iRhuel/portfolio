@@ -1,0 +1,93 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #E2E2E2;
+}
+.navBar {
+  background-color: #0B0B0B;
+  text-align: center;
+  padding: 0 0 0 1em;
+  margin: -2em -2em 2em -2em;
+  box-shadow: 2px 2px #565656;
+}
+.navBar li {
+  display: inline;
+}
+.navBar li a {
+  color: #E2E2E2;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 2.35em 2em 1.35em 2em;
+  display: inline-block;
+}
+@media (max-width: 400px) {
+  .navBar li a {
+    display: block;
+  }
+}
+.navBar li .active {
+  background-color: #6A6083;
+}
+.navBar li :hover {
+  background-color: #565656;
+}
+.home {
+  display: block;
+}
+.home p {
+  text-align: justify;
+}
+.home p,
+.home h2,
+.home h3 {
+  margin: auto;
+  padding: 1em;
+  width: 40em;
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .home p,
+  .home h2,
+  .home h3 {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  .home p,
+  .home h2,
+  .home h3 {
+    text-align: center;
+  }
+}
+.home .name {
+  color: #6A6083;
+  font-weight: bold;
+  font-size: 135%;
+}
+@media (min-width: 700px) {
+  .home {
+    margin: auto;
+    width: 700px;
+  }
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.contact .form-field {
+  display: inline;
+}
+.contact .form-field input,
+.contact .form-field textarea {
+  border: none;
+  border-bottom: 1px solid #565656;
+  background-color: #E2E2E2;
+  border-radius: 3px;
+}
+.contact .form-field textarea {
+  border: 1px solid #565656;
+}
+.contact .form-field .col-label {
+  width: 20%;
+}

@@ -1,0 +1,114 @@
+#col() {
+  purple: #6A6083;
+  navbar: #0B0B0B;
+  text: #E2E2E2;
+  hover: #292929;
+  active: #565656;
+  ltgrey: #C2C2C2;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #col[text];
+  //background: url('../adventure-alpine-background-355770.jpg') no-repeat center;
+  //background-size: auto 100%;
+  //width: 100vw;
+  //height: 100vh;
+}
+
+.app {
+}
+
+.navBar {
+  background-color: #col[navbar];
+  text-align: center;
+  padding: 0 0 0 1em;
+  margin: -2em -2em 2em -2em;
+  box-shadow: 2px 2px #565656;
+
+  li {
+    display: inline;
+
+    a {
+      color: #col[text];
+      font-variant: small-caps;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 2.35em 2em 1.35em 2em;
+      display: inline-block;
+
+      @media (max-width: 400px) {
+        display: block;
+      }
+    }
+
+    .active {
+      background-color: #col[purple];
+    }
+
+    :hover {
+      background-color: #col[active];
+    }
+  }
+}
+
+.home {
+  display: block;
+
+  p {
+    text-align: justify;
+  }
+
+  p, h2, h3 {
+    margin: auto;
+    padding: 1.0em;
+    width: 40em;
+    line-height: 1.6;
+
+    @media (max-width: 700px) {
+      width: 90%;
+    }
+
+    @media (max-width: 400px) {
+      text-align: center;
+    }
+  }
+
+  .name {
+    color: #col[purple];
+    font-weight: bold;
+    font-size: 135%;
+  }
+
+  @media (min-width: 700px) {
+    margin: auto;
+    width: 700px;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  .form-field {
+    display: inline;
+
+    input, textarea {
+      border: none;
+      border-bottom: 1px solid #col[active];
+      background-color: #col[text];
+      border-radius: 3px;
+    }
+
+    textarea {
+      border: 1px solid #col[active];
+    }
+
+    .col-label {
+      width: 20%;
+    }
+  }
+}

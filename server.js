@@ -1,53 +1,29 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const profile = require('./profile');
 require('dotenv').config();
-const Mailchimp = require('mailchimp-api-v3');
-const mailchimp = new Mailchimp(process.env.MAILCHIMP_API_KEY);
-const md5 = require('md5');
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const sgMail = require('@sendgrid/mail');
 
 const app = express();
 const port = process.env.PORT || 8080;
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use('/profile', profile);
+app.use(express.static('dist'));
 app.use(express.static('public'));
 
-app.set('views', './views');
-app.set('view engine', 'ejs');
-
-app.get('/', (req, res) => {
-    const data = {
-        person: {
-            firstName: 'Phil',
-            lastName: 'Truong'
-        }
-    };
-
-    res.render('index', data);
-});
-app.get('/contact', (req, res) => {
-    res.render('contact');
-});
-
-app.post('/thanks', (req, res) => {
-    console.log(req.body);
-    mailchimp
-        .put(`/lists/213fdf4e39/members/${md5(req.body.email.toLowerCase())}`, {
-            email_address: req.body.email,
-            status: 'subscribed',
-            merge_fields: {
-                FNAME: req.body.firstName,
-                LNAME: req.body.lastName
-            }
+app.post('/mail', (req, res) => {
+    sgMail
+        .send({to: 'pltruong2507@gmail.com', ...req.body})
+        .then(() => {
+            res.status(200).send('email sent');
         })
-        .then(result => console.log(result))
-        .catch(err => console.log(err))
-    ;
-    res.render('thanks', { contact: req.body });
+        .catch(err => {
+            console.log(err);
+            res.status(500);
+            res.send(err.message);
+        });
 });
 
 app.listen(port, () => {
