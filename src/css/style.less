@@ -10,32 +10,24 @@
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #col[text];
-  //background: url('../adventure-alpine-background-355770.jpg') no-repeat center;
-  //background-size: auto 100%;
-  //width: 100vw;
-  //height: 100vh;
-}
-
-.app {
+  background-color: #col[text] !important;
+  height: 100%;
 }
 
 .navBar {
   background-color: #col[navbar];
   text-align: center;
-  padding: 0 0 0 1em;
-  margin: -2em -2em 2em -2em;
-  box-shadow: 2px 2px #565656;
+  box-shadow: 0 3px #565656;
 
   li {
     display: inline;
 
     a {
       color: #col[text];
+      font-size: 110%;
       font-variant: small-caps;
-      font-weight: bold;
       text-decoration: none;
-      padding: 2.35em 2em 1.35em 2em;
+      padding: 0.25em 2em 0.25em 2em;
       display: inline-block;
 
       @media (max-width: 400px) {
@@ -54,31 +46,69 @@ body {
 }
 
 .home {
-  display: block;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+
+    div {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      * {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .img-container {
+      width: 300px;
+      margin-left: 1em;
+
+      img {
+        box-shadow: 3px 3px #col[ltgrey];
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      .img-container {
+        width: 210px;
+      }
+    }
+  }
 
   p {
     text-align: justify;
   }
 
-  p, h2, h3 {
+  p, h2, div {
     margin: auto;
-    padding: 1.0em;
-    width: 40em;
+    padding: 0.5em 0 0.5em 0;
+    width: 100%;
     line-height: 1.6;
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
       width: 90%;
-    }
-
-    @media (max-width: 400px) {
-      text-align: center;
     }
   }
 
   .name {
     color: #col[purple];
     font-weight: bold;
-    font-size: 135%;
+
+    :nth-child(1) {
+      font-size: 135%;
+    }
   }
 
   @media (min-width: 700px) {
@@ -93,22 +123,88 @@ body {
 }
 
 .contact {
-  .form-field {
-    display: inline;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    text-align: center;
+  }
+
+  form {
+    margin: 1em 1em 1em 1em;
+    background: rgba(255, 255, 255, 0.4);
+    //background: rgba(0, 0, 0, 0.1);
+    padding: 1em 1.5em 0 1.5em;
+    border-radius: 0.5em;
 
     input, textarea {
-      border: none;
-      border-bottom: 1px solid #col[active];
-      background-color: #col[text];
-      border-radius: 3px;
+      border: 1px solid #col[navbar];
     }
 
-    textarea {
-      border: 1px solid #col[active];
+    @media (min-width: 500px) {
+      width: 500px;
+    }
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+
+  .project {
+    display: flex;
+    margin: 5em 0 5em 0;
+    text-align: justify;
+
+    .project-main {
+      width: 25%;
+
+      h4 {
+        color: #col[purple];
+      }
+
+      .img-container {
+        width: 100%;
+        margin-left: 1em;
+
+        img {
+          box-shadow: 3px 3px #col[ltgrey];
+          width: 100%;
+        }
+      }
     }
 
-    .col-label {
-      width: 20%;
+    .project-desc {
+      width: 75%;
     }
+
+    .project-main, .project-desc {
+      display: flex;
+      flex-direction: column;
+      margin: 2em;
+    }
+  }
+
+  .project:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.font-awesome {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  .fa-2x {
+    color: #col[active];
+    margin: 0 0.2em 0.5em 0.2em;
+  }
+
+  .fa-2x:hover {
+    color: #col[purple];
   }
 }

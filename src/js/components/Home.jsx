@@ -4,26 +4,29 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className='home'>
-                <h2>Hey there, I'm <span className='name'>Phil Truong</span>,</h2>
+                <div>
+                    <div>
+                        <h2>Hey there, I'm <span className='name'>Phil Truong</span>,</h2>
+                        <p>
+                            I'm a software engineer who values dedication, quality,
+                            continual self improvement, humility, and above all else, giving back to the world.
+                        </p>
+                    </div>
+                    <div className='img-container'><img src='portrait.jpg' alt='A portrait of Phil'/></div>
+                </div>
                 <p>
-                    I'm a(n aspiring) software engineer who values dedication to quality,
-                    continual self improvement, humility, and above all else, giving back to the world.
-                </p>
-                <h3>About Me</h3>
-                <p>
-                    I've been enamored with electronics since I was a kid, whether it was soldering
-                    circuits together to create timed LEDs, or building my custom tower at home, piece by piece.
-                    I believe that you do yourself a disservice if you spend time working towards anything, and
-                    not investing yourself fully in it. I adopt a methodical, thorough approach to problem solving
-                    both in designing software and in most other areas of my life. I enjoy being challenged, and
-                    view stress as a sign of personal growth.
+                    I enjoy learning new things, and making new things. The more intricate and useful those systems
+                    are, the better - which is why I've found a passion for programming and software engineering.
+                    To me, coding is a way to translate understanding of complex systems into real, immediate value
+                    and contribute that back to the world.
                 </p>
                 <p>
-                    After growing up in San Diego, I left for college and didn't come back for 10 years. Despite
-                    enjoying my time in other locales and growing immensely as an individual, I've always been
-                    homesick in my heart. While the majority of my professional life has been spent in sales, I
-
+                    I adopt a methodical, thorough approach to problem solving both in designing software and in most
+                    other areas of my life. I enjoy being challenged, and view stress as a sign of personal growth.
+                    If I'm not building something neat or learning how to build something neat, I'm usually playing
+                    with my cats, hiking, cooking new foods, eating said foods, or trying new breweries.
                 </p>
+                <p>Also and my favorite color is <span className='name'>purple</span> :)</p>
             </div>
         );
     }
