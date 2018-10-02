@@ -1,15 +1,14 @@
 require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
 const sgMail = require('@sendgrid/mail');
 
 const app = express();
 const port = process.env.PORT || 8080;
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
+app.use(require('morgan')('dev'));
+app.use(require('body-parser').json());
 app.use(express.static('dist'));
 app.use(express.static('public'));
 

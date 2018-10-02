@@ -26,7 +26,7 @@ export default class Home extends React.Component {
                     If I'm not building something neat or learning how to build something neat, I'm usually playing
                     with my cats, hiking, cooking new foods, eating said foods, or trying new breweries.
                 </p>
-                <p>Also and my favorite color is <span className='name'>purple</span> :)</p>
+                <p>Also my favorite color is <span className='name'>purple</span> :)</p>
             </div>
         );
     }

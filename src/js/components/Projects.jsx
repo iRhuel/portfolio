@@ -1,13 +1,13 @@
 import React from 'react';
 import ProjectItem from "./ProjectItem";
+const projects = require('../projects');
 
 export default class Projects extends React.Component {
     render() {
-        const projects = require('../projects');
         return (
             <div className='projects'>
                 {projects.map(project =>
-                    <ProjectItem {...project}/>
+                    <ProjectItem className='project' {...project}/>
                 )}
             </div>
         );
