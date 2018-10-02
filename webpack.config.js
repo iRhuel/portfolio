@@ -36,13 +36,13 @@ module.exports = {
                 loader: 'file?name=[name].[ext]',
             },
             {
-                test: /\.less$/,
+                test: /\.(s*)css$/,
                 use: [{
                     loader: 'style-loader' // creates style nodes from JS strings
                 }, {
-                    loader: 'less-loader' // translates CSS into CommonJS
+                    loader: 'css-loader' // translates CSS into CommonJS
                 }, {
-                    loader: 'less-loader' // compiles Less to CSS
+                    loader: 'sass-loader' // compiles SCSS to CSS
                 }]
             }
         ],

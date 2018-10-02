@@ -4,20 +4,18 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "npm run less && webpack -p",
+    "build": "webpack -p",
     "start": "npm run build & node server.js",
-    "watch-less": "less-watch-compiler src/css dist/css style.less",
-    "watch-js": "webpack -w --mode development",
+    "watch-js": "webpack-dev-server --hot",
     "watch-server": "node server.js",
     "dev": "concurrently --kill-others \"npm:watch-*\"",
-    "less": "lessc src/css/style.less dist/css/style.css",
     "test": "webpack --mode development && mocha test/.setup.js test/*.spec.js --exit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iRhuel/startnow-node200-ejs-portfolio.git"
   },
-  "author": "",
+  "author": "Phil Truong",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iRhuel/startnow-node200-ejs-portfolio/issues"
@@ -51,10 +49,10 @@
     "chai": "^4.1.2",
     "concurrently": "^3.6.1",
     "css-loader": "^1.0.0",
-    "less": "^3.8.0",
-    "less-loader": "^4.1.0",
-    "less-watch-compiler": "^1.11.3",
     "mocha": "^5.2.0",
+    "node-sass": "^4.9.3",
+    "react-hot-loader": "^4.3.11",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "webpack-dev-server": "^3.1.5"
   }
